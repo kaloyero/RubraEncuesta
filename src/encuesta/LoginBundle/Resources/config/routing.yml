@@ -1,0 +1,7 @@
+encuesta_login_homepage:
+    path:     /hello
+    defaults: { _controller: encuestaLoginBundle:Default:index }
+
+encuesta_login_init:
+    path:     /login
+    defaults: { _controller: encuestaLoginBundle:Default:login }

@@ -1,0 +1,4 @@
+services:
+#    encuesta_login.example:
+#        class: encuesta\LoginBundle\Example
+#        arguments: [@service_id, "plain_value", %parameter%]

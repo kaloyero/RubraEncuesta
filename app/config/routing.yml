@@ -1,0 +1,7 @@
+encuesta_login:
+    resource: "@encuestaLoginBundle/Resources/config/routing.yml"
+    prefix:   /
+
+
+
+
