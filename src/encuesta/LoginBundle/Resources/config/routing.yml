@@ -1,7 +1,35 @@
 encuesta_login_homepage:
-    path:     /hello
-    defaults: { _controller: encuestaLoginBundle:Default:index }
+    path:     /
+    defaults: { _controller: encuestaLoginBundle:Login:index }
 
-encuesta_login_init:
+encuesta_login_loginEnter:
     path:     /login
-    defaults: { _controller: encuestaLoginBundle:Default:login }
+    defaults: { _controller: encuestaLoginBundle:Login:login }
+
+encuesta_login_loginValid:
+    path:     /loadMenu
+    defaults: { _controller: encuestaLoginBundle:Login:successLogin }
+
+encuesta_login_clienteListado:
+    path:     /listCliente
+    defaults: { _controller: encuestaLoginBundle:Cliente:index }
+
+encuesta_login_clienteAgregar:
+    path:     /addCliente
+    defaults: { _controller: encuestaLoginBundle:Cliente:add }
+
+encuesta_login_clienteVer:
+    path:     /viewCliente
+    defaults: { _controller: encuestaLoginBundle:Cliente:ver }
+
+encuesta_login_clienteEditar:
+    path:     /editCliente
+    defaults: { _controller: encuestaLoginBundle:Cliente:edit }
+
+encuesta_login_clienteBorrar:
+    path:     /deleteCliente
+    defaults: { _controller: encuestaLoginBundle:Cliente:delete }	
+
+encuesta_login_encuestaAgregar:
+    path:     /crearEncuesta
+    defaults: { _controller: encuestaLoginBundle:Encuesta:crear }

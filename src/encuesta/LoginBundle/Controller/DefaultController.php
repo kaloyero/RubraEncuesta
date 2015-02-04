@@ -16,9 +16,9 @@ class DefaultController extends Controller
 		$usuario = $repository->findOneBy(array('usuario'=>$us,'password'=>$pwd,'estado'=>'A'));
 
 		if ($usuario){
-			return $this->render('encuestaLoginBundle:Default:index.html.twig', array('name' => $usuario->getNombre() ));				
+			return ;
 		} else {
-			return $this->render('encuestaLoginBundle:Default:index.html.twig', array('name' => "ERORO" ));
+			return ;
 		}
     }
 

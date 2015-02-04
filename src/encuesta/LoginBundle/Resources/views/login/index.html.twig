@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>Rubra Administracion</title>
+<link rel="stylesheet" href="{{ asset('css/stylePanel.css') }}"/>
+<link rel="stylesheet" href="{{ asset('css/style.css') }}"/>
+<link rel="stylesheet" href="{{ asset('css/style2.css') }}"/>
+<script src="{{ asset('js/jquery.min.js') }}"></script>
+<script src="{{ asset('js/jquery.ui.shake.js') }}"></script> 
+	<script>
+			$(document).ready(function() {
+			
+				$('#login').click(function()
+				{
+				var username=$("#username").val();
+				var password=$("#password").val();
+				var dataString = 'username='+username+'&password='+password;
+				
+				if($.trim(username).length>0 && $.trim(password).length>0)
+				{
+					$.ajax({
+					type: "POST",
+					url: "login",
+					data: dataString,
+					cache: false,
+					beforeSend: function(){ $("#login").val('Conectando...');},
+					success: function(data){
+					if(data == "OK")
+					{
+						$("body").load("loadMenu").hide().fadeIn(1500).delay(1500);
+					}
+					else
+					{
+					 	$('#box').shake();
+					 	$("#login").val('Login')
+					 	$("#error").html("<span style='color:#cc0000'>Error:</span> Usuario o Nombre Inválido. ");
+					}
+					}
+					});
+				}
+				return false;
+				});
+			
+				
+			});
+		</script>
+</head>
+
+<body>
+<div id="main">
+<h1>Bienvenido Usuario Administrador</h1>
+
+<div id="box">
+<form action="login" method="post">
+<label>Username</label> 
+<input type="text" name="username" class="input" autocomplete="off" id="username"/>
+<label>Password </label>
+<input type="password" name="password" class="input" autocomplete="off" id="password"/><br/>
+<input type="submit" class="button button-primary" value="Log In" id="login"/> 
+<span class='msg'></span> 
+
+<div id="error">
+
+</div>	
+
+</div>
+</form>	
+</div>
+
+</div>
+</body>
+</html>

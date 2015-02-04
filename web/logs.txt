@@ -1,0 +1,2 @@
+03 02 2015 23:02:02 El Archivo logs.txt se ha creado
+03 02 2015 23:02:45 El Archivo logs.txt se ha modificado
